@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        function Apple(weight, status) {
+            this.weight = weight;
+            this.status = status;
+        }
+
+        let taoMy = new Apple(10, true);
+
+        function Human(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.checkApple = function () {
+                return taoMy.status;
+            };
+            this.eat = function (taoMy) {
+                if (taoMy.status && taoMy.weight > 0) {
+                    taoMy.weight--;
+                    this.weight++;
+                    alert('Đã ăn táo và ' + 'Cân nặng của ' + this.name + ' Cân nặng ' + this.weight);
+                } else {
+                    alert('táo bị hỏng rồi');
+                }
+                ;
+
+
+            }
+
+        }
+
+        let adam = new Human('Adam', true, 50);
+        let eva = new Human('Eva', true, 30);
+        adam.eat(taoMy);
+        eva.eat(taoMy);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
